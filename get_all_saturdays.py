@@ -2,7 +2,7 @@ import billboard_new
 import csv
 import json
 import datetime
-billboardname = ['youtube']
+billboardname = ['hot-100']
 outlist = []
 trycount = 0
 toCSV = []

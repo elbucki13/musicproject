@@ -8,6 +8,9 @@ import spotipy.util as util
 import pprint
 import csv
 
+# creates file with YT and spotify links csv
+
+
 # billboardname = ['next-big-sound-25', 'lyricfind-us', 'lyricfind-global', 'youtube', 'spotify-rewind',
 #                  'spotify-velocity', 'spotify-viral-50', 'france-songs',
 #                  'german-albums', 'germany-songs', 'canadian-albums', 'hot-canada-digital-song-sales',

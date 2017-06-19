@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 
+# get all charts from billboard.com/charts
+
 page = requests.get("http://www.billboard.com/charts/")
                     # print(page)
 soup = BeautifulSoup(page.content, 'html.parser')

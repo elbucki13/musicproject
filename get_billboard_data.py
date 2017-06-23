@@ -163,4 +163,29 @@ def spotify_search(search_str):
         print("Can't find " + search_str)
         return ""
 
-get_billboard_data('')
+def youtube_search(artist, title):
+    import requests
+    from bs4 import BeautifulSoup
+    youtubeurl = "https://www.youtube.com/results?search_query=" + artist.replace("&", "") + " " + \
+              title + ""
+
+    page = requests.get(youtubeurl)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    try:
+        for link in soup.find("h3", {"class": "yt-lockup-title"}):
+            try:
+                ytlink = link.get('href')
+                ytlink = str(ytlink)
+                youtubelink = 'https://youtube.com' + ytlink
+                ytt = link.get('title')
+                ytt = str(ytt)
+                return {'returned_link': youtubelink, 'returned_ytt': ytt}
+            except:
+                return ''
+    except:
+        return ''
+
+
+# get_billboard_data('')
+# spotify_search('the who who are you')
+print(youtube_search('blink-182','roller coaster'))

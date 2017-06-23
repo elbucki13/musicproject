@@ -126,6 +126,7 @@ for z in range(15,len(billboardname)):
     for item in toCSV:
         thefile.write("%s,,," % item)
     text_file.close()
+
     with open('' + chartlist + ' Spotify Links.csv', "w") as output:
         writer = csv.writer(output, lineterminator='\n')
         for val in SPOIDs:

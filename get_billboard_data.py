@@ -147,6 +147,20 @@ def get_billboard_data(chartlist):
             print('last')
             print(e)
 
-
+def spotify_search(search_str):
+    import spotipy
+    import spotipy.util as util
+    scope = 'user-library-read'
+    username = 'Eli Brantingham'
+    token = util.prompt_for_user_token(username, scope)
+    sp = spotipy.Spotify(auth=token)
+    result = sp.search(search_str)
+    try:
+        SPOO = result["tracks"]['items'][0]['id']
+        print(search_str + ' ' + SPOO)
+        return SPOO
+    except:
+        print("Can't find " + search_str)
+        return ""
 
 get_billboard_data('')

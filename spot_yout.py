@@ -102,7 +102,7 @@ for z in range(20,len(billboardname)):
                     print('Cant find {} by {}'.format(eb["entries"][y]['title'],eb['entries'][y]['artist']))
                     eb["entries"][y]['spotifyID'] = 'No Spotify ID Found'
                     eb["entries"][y]['spotifyLink'] = 'No Spotify Link Found'
-                    pprint(eb["entries"][y])
+                    print(json.dumps(eb["entries"][y], indent=4, sort_keys=True))
         ebb = json.dumps(eb)
         print(ebb)
         toCSV.append(ebb)

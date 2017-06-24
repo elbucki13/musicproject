@@ -27,6 +27,7 @@ def youtube_search(artist, title):
     except:
         return ''
 from get_billboard_data import spotify_search
+import pprint
 
 
 billboardname = ['hot-100', 'year-end', 'greatest-hot-100-singles', 'greatest-adult-pop-songs', 'greatest-r-b-hip-hop-songs',
@@ -101,6 +102,7 @@ for z in range(20,len(billboardname)):
                     print('Cant find {} by {}'.format(eb["entries"][y]['title'],eb['entries'][y]['artist']))
                     eb["entries"][y]['spotifyID'] = 'No Spotify ID Found'
                     eb["entries"][y]['spotifyLink'] = 'No Spotify Link Found'
+                    pprint(eb["entries"][y])
         ebb = json.dumps(eb)
         print(ebb)
         toCSV.append(ebb)

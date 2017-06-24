@@ -26,6 +26,7 @@ def youtube_search(artist, title):
                 return ''
     except:
         return ''
+from get_billboard_data import spotify_search
 
 
 billboardname = ['hot-100', 'year-end', 'greatest-hot-100-singles', 'greatest-adult-pop-songs', 'greatest-r-b-hip-hop-songs',
@@ -47,13 +48,8 @@ billboardname = ['hot-100', 'year-end', 'greatest-hot-100-singles', 'greatest-ad
                  'next-big-sound-25']
 
 
-for z in range(19,len(billboardname)):
-    lwSongs = []
-    lwLinks = []
-    lwTitle = []
-    currentTitle = []
-    currentSongs = []
-    currentLinks = []
+for z in range(20,len(billboardname)):
+    lwSongs,lwLinks,lwTitle,currentTitle,currentSongs,currentLinks = ([] for i in range(6))
     toCSV = []
     chartlist = billboardname[z]
     my_file = Path('' + chartlist + ' with dates.txt')
@@ -93,6 +89,18 @@ for z in range(19,len(billboardname)):
                 currentSongs.append(eb["entries"][y]['title'])
                 currentTitle.append(func_return['returned_ytt'])
                 currentLinks.append(func_return['returned_link'])
+            SPO_ID = eb["entries"][y]['spotifyID']
+
+            if not SPO_ID:
+                try:
+                    SPOO = spotify_search(eb["entries"][y]['artist'], eb["entries"][y]['title'])
+                    eb["entries"][y]['spotifyID'] = SPOO
+                    eb["entries"][y]['spotifyID'] = 'https://embed.spotify.com/?uri=spotify:track:' + SPOO
+                    print('{} is the code for {} by {}'.format(SPOO,eb["entries"][y]['title'],eb['entries'][y]['artist']))
+                except:
+                    print('Cant find {} by {}'.format(eb["entries"][y]['title'],eb['entries'][y]['artist']))
+                    eb["entries"][y]['spotifyID'] = 'No Spotify ID Found'
+                    eb["entries"][y]['spotifyLink'] = 'No Spotify Link Found'
         ebb = json.dumps(eb)
         print(ebb)
         toCSV.append(ebb)
@@ -120,64 +128,3 @@ for z in range(19,len(billboardname)):
 
 
 
-
-
-
-
-    #         youturl = "https://www.youtube.com/results?search_query=" + eb["entries"][y]['artist'].replace("&", "") + " " + eb["entries"][y]['title'] + ""
-    #         try:
-    #             indx = lwSongs.index(eb["entries"][y]['title'])
-    #             print('copy from last')
-    #             print(youturl)
-    #             ytLink = lwLinks[indx]
-    #             ytTitle = lwTitle[indx]
-    #             eb["entries"][y]['youtubeLink'] = ytLink
-    #             eb["entries"][y]['youtubeTitle'] = ytTitle
-    #
-    #             currentSongs.append(eb["entries"][y]['title'])
-    #             currentLinks.append(ytLink)
-    #             currentTitle.append(ytTitle)
-    #         except ValueError:
-    #             print("YTscrape")
-    #             print(youturl)
-    #             page = requests.get(youturl)
-    #             soup = BeautifulSoup(page.content, 'html.parser')
-    #             try:
-    #                 for link in soup.find("h3", {"class": "yt-lockup-title"}):
-    #                     try:
-    #                         ytlink = link.get('href')
-    #                         ytlink = str(ytlink)
-    #                         youtlink = 'https://youtube.com' + ytlink
-    #                         print(youtlink)
-    #                         print(youturl)
-    #                         ytt = link.get('title')
-    #                         ytt = str(ytt)
-    #                         print(ytt)
-    #                         print(eb["entries"][y]['rank'])
-    #                         print(eb["date"])
-    #                         eb["entries"][y]['youtubeLink'] = youtlink
-    #                         eb["entries"][y]['youtubeTitle'] = ytt
-    #                         currentSongs.append(eb["entries"][y]['title'])
-    #                         currentTitle.append(ytt)
-    #                         currentLinks.append(youtlink)
-    #                         break
-    #                     except:
-    #                         break
-    #             except:
-    #                 continue
-    #
-    #
-    #     ebb = json.dumps(eb)
-    #     print(ebb)
-    #     toCSV.insert(0, ebb)
-    #     del ebb
-    #     lwSongs = currentSongs
-    #     lwLinks = currentLinks
-    #     lwTitle = currentTitle
-    #     currentLinks = []
-    #     currentTitle = []
-    #     currentSongs = []
-    # thefile = open('' + chartlist + ' with YT Links.txt', 'w')
-    # for item in toCSV:
-    #     thefile.write("%s,,," % item)
-    # text_file.close()

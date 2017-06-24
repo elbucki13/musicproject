@@ -215,7 +215,7 @@ if __name__ == "__main__":
                      'united-kingdom-songs', 'canadian-hot-100', 'hot-canada-digital-song-sales', 'germany-songs', 'france-songs',
                      'spotify-viral-50', 'spotify-velocity', 'spotify-rewind', 'youtube', 'lyricfind-global', 'lyricfind-us',
                      'next-big-sound-25']
-    for x in range(20,50):
+    for x in range(00,150):
         get_billboard_data(billboardname[x])
 
 

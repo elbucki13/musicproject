@@ -29,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spot_yout.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spot_yout.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spot_yout.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+            <state relative-caret-position="364">
+              <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
               <folding>
                 <element signature="e#2#17#0" expanded="true" />
                 <element signature="e#172#893#0" expanded="false" />
@@ -42,10 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get_billboard_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="get_billboard_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get_billboard_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="-186">
               <caret line="199" column="27" lean-forward="false" selection-start-line="199" selection-start-column="27" selection-end-line="199" selection-end-column="27" />
               <folding>
                 <element signature="e#6774#7323#0" expanded="false" />
@@ -135,7 +135,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
@@ -150,7 +150,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.get_billboard_data">
+  <component name="RunManager" selected="Python.spot_yout">
     <configuration default="false" name="combine_json" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -680,24 +680,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spot_yout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-          <folding>
-            <element signature="e#2#17#0" expanded="true" />
-            <element signature="e#172#893#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/get_billboard_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="-186">
           <caret line="199" column="27" lean-forward="false" selection-start-line="199" selection-start-column="27" selection-end-line="199" selection-end-column="27" />
           <folding>
             <element signature="e#6774#7323#0" expanded="false" />
             <element signature="e#7364#8085#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spot_yout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding>
+            <element signature="e#2#17#0" expanded="true" />
+            <element signature="e#172#893#0" expanded="false" />
           </folding>
         </state>
       </provider>

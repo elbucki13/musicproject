@@ -45,12 +45,9 @@
       <file leaf-file-name="get_billboard_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get_billboard_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-186">
-              <caret line="199" column="27" lean-forward="false" selection-start-line="199" selection-start-column="27" selection-end-line="199" selection-end-column="27" />
-              <folding>
-                <element signature="e#6774#7323#0" expanded="false" />
-                <element signature="e#7364#8085#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="764">
+              <caret line="200" column="27" lean-forward="false" selection-start-line="200" selection-start-column="27" selection-end-line="200" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,8 +85,8 @@
         <option value="$PROJECT_DIR$/find entries.py" />
         <option value="$PROJECT_DIR$/add_to_spotify_playlist.py" />
         <option value="$PROJECT_DIR$/spotify search.py" />
-        <option value="$PROJECT_DIR$/spot_yout.py" />
         <option value="$PROJECT_DIR$/get_billboard_data.py" />
+        <option value="$PROJECT_DIR$/spot_yout.py" />
       </list>
     </option>
   </component>
@@ -410,9 +407,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3900">
           <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding>
-            <element signature="e#6774#7323#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -489,9 +484,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4000">
           <caret line="160" column="19" lean-forward="true" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
-          <folding>
-            <element signature="e#6774#7323#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,9 +528,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#6774#7323#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -682,12 +673,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/get_billboard_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
-          <caret line="199" column="27" lean-forward="false" selection-start-line="199" selection-start-column="27" selection-end-line="199" selection-end-column="27" />
-          <folding>
-            <element signature="e#6774#7323#0" expanded="false" />
-            <element signature="e#7364#8085#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="764">
+          <caret line="200" column="27" lean-forward="false" selection-start-line="200" selection-start-column="27" selection-end-line="200" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

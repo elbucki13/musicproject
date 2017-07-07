@@ -163,14 +163,17 @@ def spotify_search(artist,title):
     sp = spotipy.Spotify(auth=token)
     artist = artist.replace("&", "")
     artist = artist.split("Featuring", 1)[0]
-    search_str = artist + " " + title
-    result = sp.search(search_str)
+    #artist = artist.replace(" ","%20")
+    # title = title.replace(" ","%20")
+    search_str = "artist:{} track:{}".format(artist, title)
+    result = sp.search(search_str,type='track',limit=5)
     try:
         SPOO = result["tracks"]['items'][0]['id']
         print(search_str + ' ' + SPOO)
         return SPOO
     except:
         print("Can't find " + search_str)
+        print(result)
         return ""
 
 def youtube_search(artist, title):

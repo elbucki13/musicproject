@@ -27,8 +27,12 @@ def youtube_search(artist, title):
     except:
         return ''
 from get_billboard_data import spotify_search
+from youtube_api import youtube_search_api
 import pprint
-
+from apiclient.discovery import build
+from apiclient.errors import HttpError
+from oauth2client.tools import argparser
+from time import sleep
 
 billboardname = ['hot-100', 'year-end', 'greatest-hot-100-singles', 'greatest-adult-pop-songs', 'greatest-r-b-hip-hop-songs',
                  'greatest-country-songs', 'greatest-hot-latin-songs', 'billboard-twitter-realtime', 'radio-songs',
@@ -49,7 +53,7 @@ billboardname = ['hot-100', 'year-end', 'greatest-hot-100-singles', 'greatest-ad
                  'next-big-sound-25']
 
 
-for z in range(65,len(billboardname)):
+for z in range(40,len(billboardname)):
     lwSongs,lwLinks,lwTitle,currentTitle,currentSongs,currentLinks = ([] for i in range(6))
     toCSV = []
     line_count = 0
@@ -82,7 +86,7 @@ for z in range(65,len(billboardname)):
                 currentTitle.append(ytTitle)
             except ValueError:
                 print("YTscrape for {} by {}".format(eb["entries"][y]['title'],eb["entries"][y]['artist']))
-                func_return = youtube_search(eb["entries"][y]['artist'],eb["entries"][y]['title'])
+                func_return = youtube_search_api(eb["entries"][y]['artist'],eb["entries"][y]['title'])
                 try:
                     eb["entries"][y]['youtubeLink'] = func_return['returned_link']
                     eb["entries"][y]['youtubeTitle'] = func_return['returned_ytt']
@@ -130,6 +134,7 @@ for z in range(65,len(billboardname)):
     thefile = open('' + chartlist + ' with YT Links.txt', 'w')
     thefile.write(ebb)
     thefile.close()
+    sleep(700)
 
 
 

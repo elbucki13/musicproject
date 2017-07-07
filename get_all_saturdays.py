@@ -16,7 +16,7 @@ for b in range(0,len(billboardname)):
         innerlist = []
         outlist = []
         chart.previousDate = chart.date
-        while chart.previousDate:
+        while chart.previousDate != '2017-06-03':
             try:
                 chart = billboard_new.ChartData(chartlist, chart.previousDate)
                 eli2 = chart.to_JSON()
@@ -41,23 +41,13 @@ for b in range(0,len(billboardname)):
 
         print('writing files for ' + billboardname[b])
 
-        thefile = open('' + chartlist + ' json_commas.txt', 'w')
-        for item in toCSV:
-            thefile.write("%s,,," % item)
+
+        thefile = open('' + chartlist + ' dates_new.csv', 'w')
+        for item in outlist:
+            thefile.write("%s\n" % item)
         # thefile.write("]")
         thefile.close()
-        # Assuming res is a flat list
-        with open('dates2.csv', "w") as output:
-            writer = csv.writer(output, lineterminator='\n')
-            for val in innerlist:
-                writer.writerow(val)
-        with open('dates22.csv', "w") as output:
-            writer = csv.writer(output, lineterminator='\n')
-            for val in outlist:
-                writer.writerow(str(val))
-        with open("output.csv", 'w') as resultFile:
-            wr = csv.writer(resultFile, dialect='excel')
-            wr.writerow(outlist)
+
     except Exception as e:
         print('last')
         print(e)
